@@ -10,9 +10,13 @@ import { UserContext } from './UserContext';
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState();
 
+  const setUserWrapper = (newUser) => {
+    setUser(newUser);
+  };
+
   return (
     //<UserContext.Provider value={{ hola: 'Mundo', user }}>
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, setUserWrapper }}>
       {children}
     </UserContext.Provider>
   );

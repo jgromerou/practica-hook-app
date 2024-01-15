@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { UserContext } from './context/UserContext';
 
 export const LoginPage = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { user, setUserWrapper } = useContext(UserContext);
 
   return (
     <>
@@ -14,7 +14,7 @@ export const LoginPage = () => {
       <button
         className="btn btn-outline-primary"
         onClick={() =>
-          setUser({
+          setUserWrapper({
             id: new Date().getTime(),
             name: 'Gerardo',
             email: 'gerardo@google.com',
