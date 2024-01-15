@@ -6,10 +6,15 @@ export const TodoItem = ({ todo, onDeleteTodo, onToggleTodo }) => {
         className={`align-self-center ${
           todo.done ? 'text-decoration-line-through' : ''
         }`}
+        aria-label="span"
       >
         {todo.description}
       </span>
-      <button className="btn btn-danger" onClick={() => onDeleteTodo(todo.id)}>
+      <button
+        className="btn btn-danger"
+        aria-label="btnDelete"
+        onClick={() => onDeleteTodo(todo.id)}
+      >
         Borrar
       </button>
     </li>
